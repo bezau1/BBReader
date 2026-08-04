@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueBubbles Transcript Viewer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Messages</span>
+      <label class="upload-btn" for="fileInput">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 3l5 5h-3v7h-4V8H7l5-5zm-7 14h14v2H5v-2z"/></svg>
+        Upload
+      </label>
+      <input type="file" id="fileInput" accept=".txt,.pdf" multiple hidden>
+    </div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+      <span class="search-placeholder">Search</span>
+    </div>
+    <div id="conversationList" class="conversation-list">
+      <div class="empty-state-small">Upload a transcript to begin</div>
+    </div>
+  </aside>
+
+  <main class="chat-panel">
+    <div id="chatEmpty" class="chat-empty">
+      <div class="chat-empty-icon">
+        <svg viewBox="0 0 24 24" width="56" height="56"><path fill="currentColor" d="M12 2C6.48 2 2 6.02 2 11c0 2.5 1.13 4.75 3 6.4V22l4.1-2.3c.9.2 1.87.3 2.9.3 5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+      </div>
+      <div class="chat-empty-text">No Conversation Selected</div>
+      <div class="chat-empty-sub">Upload a transcript (.txt) to view it here</div>
+    </div>
+    <div id="chatView" class="chat-view" style="display:none;">
+      <div class="chat-header">
+        <div class="chat-avatar" id="chatAvatar"></div>
+        <div class="chat-header-name" id="chatHeaderName"></div>
+        <input type="text" class="chat-header-name-input" id="chatHeaderNameInput" hidden>
+        <button class="edit-name-btn" id="editNameBtn" title="Rename contact">
+          <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        </button>
+      </div>
+      <div class="messages" id="messages"></div>
+    </div>
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
