@@ -1,7 +1,7 @@
-/* Monocraft (https://github.com/IdreesInc/Monocraft), loaded from jsDelivr */
+/* Monocraft (https://github.com/IdreesInc/Monocraft) */
 @font-face {
   font-family: 'Monocraft';
-  src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf') format('truetype');
+  src: url('fonts/Monocraft.ttf') format('truetype');
   font-display: swap;
 }
 
