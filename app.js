@@ -198,12 +198,12 @@ $('solve').onclick = () => {
   $('result').hidden = false;
   stepsEl.innerHTML = '';
   if (!out || !out.steps.length) {
-    sum.innerHTML = '<b style="color:#ff6b6b">No legal placement found — game over for this set.</b>';
+    sum.innerHTML = '<b class="warn">No legal placement found — game over for this set.</b>';
     return;
   }
   const lines = out.steps.reduce((a, s) => a + s.res.lines, 0);
   sum.innerHTML = out.stuck
-    ? '<b style="color:#ff6b6b">Warning:</b> not every piece can be placed. Best partial line shown. '
+    ? '<b class="warn">Warning:</b> not every piece can be placed. Best partial line shown. '
     : `Best score: <b>${out.score}</b> pts · ${lines} line${lines === 1 ? '' : 's'} cleared`;
   const pieceNames = ['A', 'B', 'C'];
   out.steps.forEach((s, i) => {
